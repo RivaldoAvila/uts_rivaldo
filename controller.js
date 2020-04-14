@@ -278,4 +278,18 @@ exports.hapusservis = function(req,res){
 };
 
 
+//menghapus data berdasarkan id
+exports.hapussparepart = function(req,res){
+    var id = req.body.id_sparepart;
+    connection.query('DELETE FROM sparepart WHERE id_sparepart=?',[id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok("Berhasil Hapus data", res)
+        }
+    });
+};
+
+
 
