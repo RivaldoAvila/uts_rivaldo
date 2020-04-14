@@ -30,4 +30,7 @@ module.exports = function(app){
 
     app.route('/tambahsparepart')
     .post(jsonku.tambahsparepart);
+
+    app.route('/tambahlevel')
+    .post(jsonku.tambahlevel);
    }
