@@ -17,3 +17,13 @@ exports.tampilsemuauser = function(req,res){
         }
     });
 };
+//Menampilkan data sparepart
+exports.tampilsemuasparepart = function(req,res){
+    connection.query('SELECT * FROM sparepart', function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok(rows, res)
+        }
+    });
+};
