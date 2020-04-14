@@ -164,3 +164,22 @@ exports.ubahmontir = function(req,res){
     });
     
 };
+
+//mengubah data berdasarkan id
+exports.ubahsparepart = function(req,res){
+    var id_sparepart = req.body.id_sparepart;
+    var nama_sparepart = req.body.nama_sparepart;
+    var harga_sparepart = req.body.harga_sparepart;
+    var satuan = req.body.satuan;
+
+    connection.query('UPDATE sparepart SET nama_sparepart=?, harga_sparepart=?, satuan=? WHERE id_sparepart=?',[nama_sparepart,harga_sparepart,satuan,id_sparepart],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok("Berhasil ubah data", res)
+        }
+    });
+    
+};
+
