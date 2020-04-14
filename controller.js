@@ -89,16 +89,15 @@ exports.tambahuser = function(req,res){
 };
 
 //menambahkan data montir
-exports.tambahuser = function(req,res){
-    var id_user = req.body.id_user;
-    var nama_user = req.body.nama_user;
-    var email = req.body.email;
-    var password = req.body.password;
-    var level = req.body.level;
+exports.tambahmontir = function(req,res){
+    var id_montir = req.body.id_montir;
+    var nama_montir = req.body.nama_montir;
+    var harga_perjam = req.body.harga_perjam;
 
 
-    connection.query('INSERT INTO user (id_user,nama_user,email,password,level) VALUES(?,?,?,?,?)',
-    [id_user,nama_user,email,password,level],
+
+    connection.query('INSERT INTO montir (id_montir,nama_montir,harga_perjam) VALUES(?,?,?)',
+    [id_montir,nama_montir,harga_perjam],
     function(error, rows, fields){
         if(error){
             console.log(error);
