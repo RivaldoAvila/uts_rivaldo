@@ -76,7 +76,7 @@ exports.login = function(req,res){
                 }
 
                 var query = "INSERT INTO ?? SET ?";
-                var table = ["akses_token"];
+                var table = ["level"];
 
                 query = mysql.format(query, table);
                 connection.query(query, data, function(error, rows){
