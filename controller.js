@@ -304,5 +304,29 @@ exports.hapususer = function(req,res){
     });
 };
 
+//menampilkan semua data tabel montir berdasarkan id
+exports.tampilsemuaberdasarkanid = function(req,res){
+    let id = req.params.id;
+    connection.query('SELECT * FROM montir WHERE id_montir = ?', [id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok(rows,res)
+        }
+    });
+};
 
+//menampilkan semua data tabel sparepart berdasarkan id
+exports.tampilsemuaberdasarkanid = function(req,res){
+    let id = req.params.id;
+    connection.query('SELECT * FROM sparepart WHERE id_sparepart = ?', [id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok(rows,res)
+        }
+    });
+};
 

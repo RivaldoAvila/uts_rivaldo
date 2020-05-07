@@ -64,4 +64,10 @@ module.exports = function(app){
 
     app.route('/hapususer')
     .delete(jsonku.hapususer);
+
+    app.route('/tampilmontir/:id')
+        .get(jsonku.tampilsemuaberdasarkanid);
+
+        app.route('/tampilsparepart/:id')
+        .get(jsonku.tampilsemuaberdasarkanid);
    }

@@ -13,6 +13,7 @@ exports.registrasi = function(req,res) {
         nama_user: req.body.nama_user,
         email: req.body.email,
         password: md5(req.body.password),
+        role: req.body.role,
         level: req.body.level
     }
 
@@ -45,7 +46,7 @@ exports.registrasi = function(req,res) {
 
             }
         })
-};
+}
 
 // controller untuk login
 exports.login = function(req,res){
@@ -67,10 +68,10 @@ exports.login = function(req,res){
                     expiresIn: 1440
                 });
 
-                Id=rows[0].Id_user; 
+                id_user=rows[0].id_user; 
 
                 var data = {
-                    Id: Id,
+                    id_user: id_user,
                     access_token: token,
                     ip_address: ip.address()
                 }
@@ -87,7 +88,7 @@ exports.login = function(req,res){
                             success: true,
                             message:'Token JWT tergenerate!',
                             token:token,
-                            currUser: data.Id
+                            currUser: data.id_user
                         });
                     }
                 });
