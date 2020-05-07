@@ -73,10 +73,11 @@ exports.tambahuser = function(req,res){
     var nama_user = req.body.nama_user;
     var email = req.body.email;
     var password = req.body.password;
+    var role = req.body.role;
     var level = req.body.level;
 
 
-    connection.query('INSERT INTO user (id_user,nama_user,email,password,level) VALUES(?,?,?,?,?)',
+    connection.query('INSERT INTO user (id_user,nama_user,email,password,role,level) VALUES(?,?,?,?,?,?)',
     [id_user,nama_user,email,password,level],
     function(error, rows, fields){
         if(error){
@@ -189,9 +190,10 @@ exports.ubahuser = function(req,res){
     var nama_user = req.body.nama_user;
     var email = req.body.email;
     var password = req.body.password;
+    var role = req.body.role
     var level = req.body.level;
 
-    connection.query('UPDATE user SET nama_user=?, email=?, password=?, level=? WHERE id_user=?',[nama_user,email,password,level,id_user],
+    connection.query('UPDATE user SET nama_user=?, email=?, password=?, role=?, level=? WHERE id_user=?',[nama_user,email,password,role,level,id_user],
     function(error, rows, fields){
         if(error){
             console.log(error);
