@@ -78,7 +78,7 @@ exports.tambahuser = function(req,res){
 
 
     connection.query('INSERT INTO user (id_user,nama_user,email,password,role,level) VALUES(?,?,?,?,?,?)',
-    [id_user,nama_user,email,password,level],
+    [id_user,nama_user,email,password,role,level],
     function(error, rows, fields){
         if(error){
             console.log(error);
@@ -331,4 +331,3 @@ exports.tampilsemuaberdasarkanid = function(req,res){
         }
     });
 };
-
